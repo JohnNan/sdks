@@ -1,0 +1,22 @@
+<!--footer-->
+<div ng-controller="footerCtrl" class="footer">
+    <div class="ftr-inr">
+        <div class="wx-app">
+            <span>旗下产品</span>
+            <a href="javascript:void(0);"><img src="images/sprite/wx-app.png" ng-click="openWxxcx()"></a>
+        </div>
+        <ul class="ftr-nav">
+            <li  ng-click="doFooter(0)"><a href="javascript:void(0);">联系我们</a></li>
+            <li  ng-click="doFooter(1)"><a href="javascript:void(0);">建议反馈</a></li>
+            <li  ng-click="doFooter(2)"><a href="javascript:void(0);">极乐协议</a></li>
+            <!--<li  ng-click="doFooter(3)"><a href="javascript:void(0);">极乐帮助</a></li>-->
+            <li  ng-click="doFooter(4)"><a href="javascript:void(0);">关于我们</a></li>
+        </ul>
+        <div class="folo-us">
+            <!--<span class="qc-cod"></span>-->
+            <a href="javascript:void(0);" class="wch"><img class="qc-cod" src="/sdks/app/images/sprite/wx-qr.png"></a>
+            <a href="javascript:void(0);" class="sm" ng-click="openWb()"></a>
+            <div class="copyright">聚蜗科技 ©2009–2016<a target="_blank" href="http://www.miibeian.gov.cn/">鄂ICP备14019861号</a></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<div ng-include src="'src/include/header/header.html'"></div>
+<!--body-->
+<div class="body">
+    <div class="container">
+        <div class="main">
+            <div class="art-sect">
+                <h1>{{article.title}}</h1>
+                <div class="art-lnk"><span>原文地址：<a href="{{article.originUrl}}">{{article.title}}</a></span></div>
+                <!--<div class="art-lnk"><span>博主博客地址：<a href="">Damonare的个人博客</a></span></div>-->
+                <div class="detail">
+                    <p>{{article.detail|strToHtml}}</p>
+                </div>
+                <ul class="tag-lst">
+                    <li ng-repeat="c in article.tags"><a href="" class="tag"><span class="tag-nam">{{c.name}}</span></a></li>
+                </ul>
+            </div>
+            <div class="cmnt-sect">
+                <div class="cmnt-sect-hdr" ng-show="article.commentsCount">
+						<span class="cmnt-score">
+							平均分
+                            <raty score="{{article.score}}" number="5" readOnly="true"></raty>
+							<span class="score">{{article.score}}</span>
+						</span>
+                    <span class="count">已有{{article.commentsCount}}人参与评星</span>
+                </div>
+                <div class="list cmnt-lst">
+                    <!--item-->
+                    <div class="item cmnt-itm" ng-repeat="c in evaluates">
+                        <div class="cmnt-act">
+                            <a href="/person/{{c.creater.alias}}" class="avatar mugshot" ng-mouseenter="popup4(c.creater,$event)" ng-mouseleave="leaveParent()"><img src="{{c.creater.photo}}"></a>
+                            <a href="/person/{{c.creater.alias}}" class="pet-nam">{{c.creater.petName}}</a>
+                            <span class="score">
+                                <raty score="{{c.score}}" number="5" readOnly="true"></raty>
+                            </span>
+                            <span class="time">{{c.createTime|dateDiff}}</span>
+                        </div>
+                        <p>{{c.detail}}</p>
+                    </div>
+                    <button class="button mor-btn" ng-show="evaluates.length>=3">加载更多</button>
+                </div>
+                <div class="cmnt-ed-are">
+                    <span class="cmnt-score">赐个评价
+                        <raty score="0" number="5"></raty>
+							<span class="score"></span>
+						</span>
+                    <textarea placeholder="评论输入" ng-model="comForm.detail"></textarea>
+                    <input class="button sbm-btn" type="submit" name="发表" value="发表" ng-click="com()">
+                </div>
+            </div>
+            <div class="rel-sect" ng-show="articles">
+                <div class="rel-sect-hdr">看过该文章的人还看了</div>
+                <div class="list rel-lst art-lst">
+                    <!--文章item-->
+                    <div class="item rel-itm art-itm" ng-repeat="c in articles">
+                        <h2 ><a href="" class="art-lnk" ng-click="goArticle(c.id)">{{c.title}}</a></h2>
+                        <div class="itm-meta">
+                            <a href="" class="author">{{c.creater.petName}}</a>
+                            <span class="score"><span class="icon"></span><span class="count">{{c.score}}</span></span>
+                            <span class="time">{{c.createTime|dateDiff}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+        <div class="side">
+            <div class="art-act">
+                <div class="art-act-tit">作者</div>
+                <a href="/person/{{article.creater.alias}}" class="avatar mugshot" ng-mouseenter="popup4(article.creater,$event)" ng-mouseleave="leaveParent()"><img src="{{article.creater.photo}}"></a>
+                <a href="/person/{{article.creater.alias}}" class="pet-nam">{{article.creater.petName}}</a>
+                <span class="time">{{article.createTime|dateDiff}}</span>
+                <p class="slogan">{{article.creater.slogan}}</p>
+            </div>
+        </div>
+</div>
+    </div>
+
+<popup ng-if="showPop" close="showPop=false" close-action="esc timeout outerchick" align="top">
+    <div class="bbl-wrap" ng-mouseenter="enterChild()" ng-mouseleave="popup4(null,$event)">
+        <div class="bbl-skn"><span></span></div>
+        <div class="bbl-info">
+            <a href="/person/{{popInfo.alias}}" class="avatar"><img src="{{popInfo.photo}}"></a>
+            <a href="/person/{{popInfo.alias}}" class="name">{{popInfo.petName}}</a>
+            <!--<div class="location">湖北武汉</div>-->
+            <div class="slogan">{{popInfo.slogan}}</div>
+            <button  ng-class="['buttton folo-btn ',{'pressed':popInfo.isFollowed}]" ng-if="!popInfo.isMe" ng-click="follow(popInfo)">{{popInfo.isFollowed?"已关注":"关注"}}</button>
+        </div>
+        <div class="data">
+            <span class="vot-up">赞同<span class="count">{{popInfo.upVotesCount}}</span></span>
+            <span class="followers">关注者<span class="count">{{popInfo.followersCount}}</span></span>
+            <span class="answers">回答<span class="count">{{popInfo.answersCount}}</span></span>
+        </div>
+    </div>
+</popup>
+
+<div ng-include src= "'src/include/footer/footer.html'"></div>

@@ -1,0 +1,24 @@
+<div class="mask" ng-controller="adviseCtrl">
+    <a href="" class="icon close" ng-click="goBack()"></a>
+    <div class="mod-dial-wrap">
+        <div class="mod-dial-bdy">
+            <span class="prmp-suc" ng-show="success==1"><i class="icon prmp-icn">提交成功</i></span>
+            <span class="prmp-fal" ng-show="success==2"><i class="icon prmp-icn">提交失败 {{errorMsg}}</i></span>
+            <div class="mod-dial-cntt">
+                <div class="mod-dial-txt">反馈</div>
+                <div class="fb-ed-are">
+                    <span class="ed-are-prmp">填写你的反馈意见</span>
+                    <select ng-model="form.type">
+                        <option value="">请选择反馈类型</option>
+                        <option value="feedback" ng-selected="form.type=='feedback'">问题反馈</option>
+                        <option value="advise" ng-selected="form.type=='advise'">功能建议</option>
+                    </select>
+                    <textarea ng-model="form.content" maxlength="25"></textarea>
+                    <span class="prompt">还可以输入{{25-form.content.length}}个字</span>
+                </div>
+                <input type="submit" value="确定" class="button sbm-btn" ng-click="postAdvise()">
+                <input type="button" value="取消" class="button can-btn" ng-click="goBack()">
+            </div>
+        </div>
+    </div>
+</div>

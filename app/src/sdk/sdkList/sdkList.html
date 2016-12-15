@@ -1,0 +1,24 @@
+<div ng-include src="'src/include/header/header.html'"></div>
+<div class="body">
+    <div class="container">
+        <div class="main">
+            <div class="list wgt-lst">
+                <!--组件item-->
+                <div class="item wgt-itm" ng-repeat="c in sdkList">
+                    <h2 ng-click="goSDKDetail(c.id)"><a href="" class="wgt-nam">{{c.shortName}}</a></h2>
+                    <div class="introduction">{{c.slogan}}</div>
+                    <div class="itm-meta">
+                        <span class="articles">文章{{c.articlesCount}}</span>
+                        <span class="followers">关注{{c.followersCount}}</span>
+                    </div>
+                    <div class="itm-sid">
+                        <button ng-class="{true:'button folo-btn pressed',false:'button folo-btn'}[c.isFollowed]" ng-click="follow(c)">{{c.followStatu}}</button>
+                    </div>
+                </div>
+                <button ng-class="{true:'button mor-btn',false:'button mor-btn disable'}[showMore == '加载更多']"  ng-click="loadMore()">{{showMore}}</button>
+            </div>
+        </div>
+        <div ng-include src="'src/include/aside/aside.html'"></div>
+    </div>
+</div>
+<div class="footer" ng-include src= "'src/include/footer/footer.html'"></div>

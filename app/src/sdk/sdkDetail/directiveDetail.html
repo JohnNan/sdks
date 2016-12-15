@@ -1,0 +1,60 @@
+<div ng-include src="'src/include/header/header.html'"></div>
+<!--body-->
+<div class="body">
+    <div class="container">
+        <div class="main">
+            <div class="prf-sect wgt-prf">
+                <span class="wgt-logo"><img src="{{sdk.photo}}"></span>
+                <a href="" ng-if="sdk.document" class="icon home" ng-click="openDocument(sdk.document)"></a>
+                <h2>{{sdk.shortName}}</h2>
+                <span class="author">{{sdk.creater.petName}}</span>
+                <div class="doc-lnk" ng-show="sdk.document"><a href="{{sdk.document}}">官方文档</a></div>
+            </div>
+            <ul class="nav wgt-nav">
+                <li ng-class="{'current':isArticle}" ng-click="tabArticle(0)"><span>文章</span></li>
+                <li ng-class="{'current':!isArticle}" ng-click="tabArticle(1)"><span>代码</span></li>
+            </ul>
+            <div ng-class="{true:'list art-lst',false:'list dpnd-lst'}[isArticle]">
+                <!--文章item-->
+                <div class="item art-itm" ng-repeat="c in articles" ng-show="isArticle">
+                    <h2 ng-click="goArticle(c.id)"><a href="" class="art-lnk">{{c.title}}</a></h2>
+                    <div class="itm-meta">
+                        <a href="" class="author">{{c.creater.petName}}</a>
+                        <span class="score"><span class="icon"></span><span class="count">{{c.score}}</span></span>
+                        <span class="time">{{c.createTime|dateDiff}}</span>
+                    </div>
+                </div>
+                <button ng-class="{true:'button mor-btn',false:'button mor-btn disable'}[showMore == '加载更多']" ng-click="loadMoreArticle()" ng-show="showMore && isArticle">{{showMore}}</button>
+                <!--组件item-->
+                <div class="item dpnd-itm" ng-show="!isArticle && sdkCodes.ivy">
+                    <span class="dpnd-logo"><img src="images/tmp/ivy.png"></span>
+					<pre class="snippets"><code>{{sdkCodes.ivy}}</code></pre>
+                </div>
+                <div class="item dpnd-itm" ng-show="!isArticle && sdkCodes.maven">
+                    <span class="dpnd-logo"><img src="images/tmp/maven.png"></span>
+                    <pre class="snippets"><code>{{sdkCodes.maven}}</code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="side">
+            <div class="wgt-intro">
+                <p>{{sdk.slogan}}
+                    <a href="" class="all" ng-show="isSummary" ng-click="showDet()">more</a>
+                    <a href="" class="mor-lnk" ng-show="isSummary"> ...</a>
+                </p>
+
+                <button ng-class="{true:'button folo-btn pressed',false:'button folo-btn'}[sdk.isFollowed]" ng-click="follow(sdk)">{{sdk.followStatu}}</button>
+                <span class="count">{{sdk.followersCount}}关注</span>
+            </div>
+            <a href="javascript:void(0);" class="banner" ng-click="goHistory()" ng-show="loginStatus"><img src="images/sprite/history.png"></a>
+        </div>
+        <ul class="contents">
+            <li>我的目录</li>
+            <li ng-click="changeType('START')"><a href="">入门</a></li>
+            <li ng-click="changeType('INSTALL')"><a href="">安装</a></li>
+            <li ng-click="changeType('CONFIG')"><a href="">配置</a></li>
+            <li ng-click="changeType('USE')"><a href="">使用</a></li>
+        </ul>
+    </div>
+</div>
+<div class="footer" ng-include src= "'src/include/footer/footer.html'"></div>

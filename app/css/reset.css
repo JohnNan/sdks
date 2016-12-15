@@ -1,0 +1,158 @@
+@charset "utf-8";
+/*  
+* @description:   
+* @author:   
+* @update:   
+*/ 
+
+/*===reset===*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+html,ul,ol,li,form,textarea{
+	margin:0;
+	padding:0;
+	}
+html,body{
+	height:100%;
+	font-family:Helvetica,Arial,PingFang SC,Hiragino Sans GB,WenQuanYi Micro Hei,Microsoft Yahei,sans-serif;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	}
+body,h1,h2,h3,h4,h5,h6,p{
+	margin:0;
+	font-weight:normal;
+	word-break:break-all;
+	word-wrap:break-word;
+	white-space:-moz-pre-wrap;
+	}
+pre,code{white-space: pre-wrap;}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+	}
+th,td{
+	text-align:center;
+	vertical-align:top;
+	font-weight:normal;
+	}
+li{
+	list-style:none;
+	}
+input,textarea{
+	outline:0;
+	border:0;
+	}
+button{
+	outline:none;
+	background:none;
+	border:none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	cursor: pointer;
+	}
+select,textarea,input,button{
+	font-family:inherit;
+	}
+/*select自定义重置*/
+select{
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	text-overflow:"";
+	color:#666;
+	outline:none;
+	}
+select::-ms-expand{display:none; }
+input[type="checkbox"],input[type="radio"]{
+	margin-top:0;
+	margin-bottom:0;
+	vertical-align:text-bottom;
+	}
+/*改变webkit浏览器input获取焦点时出现黄色背景*/
+input:-webkit-autofill,input:-webkit-autofill:focus{
+    background-color:transparent !important;
+	-webkit-box-shadow: 0 0 0px 60px #fff inset;
+	-webkit-text-fill-color:#ccc; 
+ }
+ /* webkit 浏览器*/
+::-webkit-input-placeholder { color:#bbb; }
+/* 火狐浏览器 */
+::-moz-placeholder { color:#bbb; }
+/*去除IE输入框获得焦点时，inoput上面有显示密码的控件*/
+::-ms-clear,::-ms-reveal{display:none;}
+img{
+	border:0;
+	outline:none;
+	}
+a{text-decoration:none;}
+/*======================内容排布================================*/
+
+/*===fontawesome===*/
+@font-face{
+	font-family:'FontAwesome';
+	src: url('/sdks/app/fonts/fontawesome-webfont.eot');
+	src: url('/sdks/app/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('/sdks/app/fonts/fontawesome-webfont.woff') format('woff'),
+	     url('/sdks/app/fonts/fontawesome-webfont.tff')  format('truetype'),
+		 url('/sdks/app/fonts/fontawesome-webfont.svg#FontAwesome')  format('svg');
+	font-weight:normal;
+	font-style:normal;
+	}
+.icon{
+	display:inline-block;
+	font-family:'FontAwesome' !important;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	}
+.srch-icn:before{
+	content: '\f002';
+	}
+.hol-icn:before{
+	content: '\f006';
+	}
+.score .icon:before{
+	content: '\f005';
+	}
+.close:before{
+	content:'\f00d';
+	}
+.error .prmp-icn:before,.prmp-fal .prmp-icn:before{
+	content:'\f057';
+	}
+.correct .prmp-icn:before,.prmp-suc .prmp-icn:before{
+	content:'\f058';
+	}
+.ntfy-icn:before{
+	content:'\f003';
+	}
+.inv-icn:before{
+	content:'\f007';
+	}
+.sett-icn:before{
+	content:'\f013';
+	}
+.cre-icn:before{
+	content:'\f067';
+	}
+.sgn-out-icn:before{
+	content:'\f011';
+	}
+.help:before{
+	content:'\f059';
+	}
+.home:before{
+	content:'\f0ac';
+	}

@@ -1,0 +1,53 @@
+/**
+ * Created by John on 2016/11/22.
+ */
+app.constant("serviceConfig",
+    {
+        preset:"local",       //'dev'数据走接口'local'走json
+        dev:{
+            getUserInfo:'/sdk/userInfo',
+            getRecomend:'/recommend',
+            getRecomendMore:"/recommend/more",
+            followSDK:"/sdk/follow",
+            unFollowSDK:"/sdk/unfollow",
+            //getSDKDomainList:"/sdk/domain/",
+            //getSDKDomainListMore:"/sdk/domain/more",
+            getSKDDetail:"/sdk/detail/",
+            getArticleList:"/article/list",
+            getArticleDetail:"/article/detail/",
+            addComment:"/evaluate/add",
+            searchKeyWord:"/find",
+            searchMore:"/find/more",
+            getHistory:"/track",
+            getHistoryMore:"/track/more",
+            getEvaluateMore:"/evaluate/view/more",
+            getNavigationBar:"/navigation",
+            getSDKList:"/sdk/list",
+            getSDKListMore:"/sdk/more",
+            followCus:"/customer/follow",
+            unFollowCus:"/customer/unfollow"
+        },
+        local:{
+            followSDK:"/sdks/app/fakeData/followSDK.json",
+            getArticleDetail:"/sdks/app/fakeData/getArticleDetail.json",
+            getArticleList:"/sdks/app/fakeData/getArticleList.json",
+            getHistory:"/sdks/app/fakeData/getHistory.json",
+            getNavigationBar:"/sdks/app/fakeData/getNavigationBar.json",
+            getRecomend:'/sdks/app/fakeData/getRecomend.json',
+            //getSDKDomainList:"/sdks/app/fakeData/getSDKDomainList.json",
+            getSDKList:"/sdks/app/fakeData/getSDKList.json",
+            getSKDDetail:"/sdks/app/fakeData/getSKDDetail.json",
+            getUserInfo:"/sdks/app/fakeData/getUserInfo.json",
+            unFollowSDK:"/sdks/app/fakeData/unFollowSDK.json",
+            searchKeyWord:"/sdks/app/fakeData/searchKeyWord.json",
+            //getRecomendMore:"/sdks/app/fakeData/getRecomendMore.json",
+            //getSDKDomainListMore:"/sdks/app/fakeData/getSDKDomainListMore.json",
+            addComment:"/sdks/app/fakeData/addComment.json",
+            //searchMore:"/sdks/app/fakeData/searchMore.json",
+            //getHistoryMore:"/sdks/app/fakeData/getHistoryMore.json",
+            //getEvaluateMore:"/sdks/app/fakeData/getEvaluateMore.json",
+            //getSDKListMore:"/sdks/app/fakeData/getSDKListMore.json"
+        }
+
+    }
+    );

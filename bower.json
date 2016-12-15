@@ -1,0 +1,31 @@
+{
+  "name": "sdks",
+  "description": "A project 4 Dreawer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "dependencies": {
+    "angular-animate": "^1.5.9",
+    "angular-ui-router": "ui-router#^0.3.2",
+    "ng-dialog": "^0.6.4",
+    "nprogress": "^0.2.0",
+    "raty": "^2.7.1",
+    "jquery": "^3.1.1"
+  },
+  "main": "app.js",
+  "keywords": [
+    "sdks",
+    "angular"
+  ],
+  "authors": [
+    "JohnNan"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}

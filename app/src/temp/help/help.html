@@ -1,0 +1,191 @@
+<div class="header" ng-include src="'src/include/header/header.html'"></div>
+<div class="body" ng-controller="helpCtrl">
+    <div class="main">
+        <ul class="nav">
+            <!--<li class="current"><a href="#user">用户中心</a></li>-->
+            <li ng-class="{true:'current',false:''}[activeEle=='feed']">  <a href="" ng-click="go('feed')">  提问回答</a></li>
+            <li ng-class="{true:'current',false:''}[activeEle=='answer']"><a href="" ng-click="go('answer')">问答详情</a></li>
+            <li ng-class="{true:'current',false:''}[activeEle=='user']">  <a href="" ng-click="go('user')">  用户中心</a></li>
+            <li ng-class="{true:'current',false:''}[activeEle=='domain']"><a href="" ng-click="go('domain')">领域中心</a></li>
+        </ul>
+        <div class="tour-gud-sect">
+            <div class="tour-gud-hdr">极乐帮助</div>
+        </div>
+        <div class="tour-gud-bdy">
+            <!--colunm-->
+            <a name="feed" id="feed" class="gud-lnk"></a>
+            <div class="tour-gud-col feed">
+                <h2 class="tour-gud-tit">提问和回答</h2>
+                <div class="tour-gud-wgt">
+                    <div class="widgt left">问答<strong>标签</strong><br>表示问题的类型</div>
+                    <div class="widgt left">针对该问题<br>的最佳回答者<strong>个人信息</strong></div>
+                    <div class="widgt left">针对该问题<br>的<strong>最佳回答</strong></div>
+                </div>
+                <div class="tour-gud-cntt">
+                    <div class="tag-lst">
+                        <a href="" class="ques-dom"><img src="images/domain/html.png"></a>
+                        <a href="" class="ques-dom"><img src="images/domain/css.png"></a>
+                        <a href="" class="tag">php</a>
+                        <a href="" class="tag">angularJS</a>
+                    </div>
+                    <h2>请问 Controller 单元测试报异常: Invocation of init method failed？中文押韵一般是指单音节的汉字韵母相同</h2>
+                    <div class="cur-act ">
+                        <div class="act-info">
+                            <a href="" class="mugshot"><img src="images/tmp/usr3.png"></a>
+                            <a href="" class="pet-nam">Simple Hu</a>
+                            <span class="slogan">教练，我想打篮球</span>
+                            <p class="act-idt">
+                                <a href="" class="logo"><img src="images/product/jiathis.png"></a>
+                                <a href="" class="sht-nam">北京JIATIS分享科技</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="summary">中文押韵一般是指单音节的汉字韵母相同；但英语和许多其他的语言之中押韵（rhyme）可以在多个音节上产生。所以英语中提及押韵，并不能按照中文思路理解为要去押『哪个』音节，而是要问押『哪些』音节，以及『怎么』押。也就是说英语（和其他欧洲语言)里面... <a href="" class="all">更多</a></div>
+                    <div class="act-bar">
+                        <span class="time">18小时前</span>
+                        <span class="comment"><a href="" class="count">28</a>评论</span>
+                        <span class="vot-up"><a href="" class="count">28</a>赞</span>
+                        <span class="vot-dwn"><a href="" class="count">28</a>反对</span>
+                        <span class="share">分享</span>
+                        <span class="mor-act-mnu"></span>
+                    </div>
+                </div>
+            </div>
+            <!--colunm-->
+            <a name="answer" id="answer" class="gud-lnk"></a>
+            <div class="tour-gud-col answer">
+                <h2 class="tour-gud-tit">问答详情回答列表</h2>
+                <div class="tour-gud-wgt">
+                    <div class="widgt right">针对该回答者的<br>回答<strong>表示赞成和<br>反对</strong></div>
+                </div>
+                <div class="tour-gud-cntt">
+                    <div class="cur-act ">
+                        <div class="act-info">
+                            <a href="" class="mugshot"><img src="images/tmp/usr2.png"></a>
+                            <a href="" class="pet-nam">Simple Hu</a>
+                            <span class="slogan">教练，我想打篮球</span>
+                            <p class="act-idt">
+                                <a href="" class="logo"><img src="images/product/jiathis.png"></a>
+                                <a href="" class="sht-nam">北京JIATIS分享科技</a>
+                            </p>
+                        </div>
+                        <div class="vot-btn-bar">
+                            <span class="up"><i class="icon up-btn"></i>3</span>
+                            <span class="down"><i class="icon dwn-btn"></i>15</span>
+                        </div>
+                    </div>
+                    <div class="summary">中文押韵一般是指单音节的汉字韵母相同；但英语和许多其他的语言之中押韵（rhyme）可以在多个音节上产生。所以英语中提及押韵，并不能按照中文思路理解为要去押『哪个』音节，而是要问押『哪些』音节，以及『怎么』押。也就是说英语（和其他欧洲语言)里面... <a href="" class="all">更多</a></div>
+                </div>
+            </div>
+            <!--colunm-->
+            <div class="tour-gud-col comment">
+                <div class="tour-gud-wgt">
+                    <div class="widgt left">回答<strong>动态数据</strong><br>展开样式，标题可切换</div>
+                    <div class="widgt right"><strong>评论回答</strong><br>操作控件</div>
+                </div>
+                <div class="tour-gud-cntt">
+                    <div class="summary">中文押韵一般是指单音节的汉字韵母相同；但英语和许多其他的语言之中押韵（rhyme）可以在多个音节上产生。所以英语中提及押韵，并不能按照中文思路理解为要去押『哪个』音节，而是要问押『哪些』音节，以及『怎么』押。也就是说英语（和其他欧洲语言)里面... <a href="#anchor1" class="all">更多</a></div>
+                    <div class="act-bar">
+                        <span class="time">18小时前</span>
+                        <span class="comment"><a href="" class="count">28</a>评论</span>
+                        <span class="vot-up"><a href="" class="count">28</a>赞</span>
+                        <span class="vot-dwn"><a href="" class="count">28</a>反对</span>
+                        <span class="share">分享</span>
+                        <span class="mor-act-mnu"></span>
+                    </div>
+                    <div class="cmnt-sect">
+                        <div class="cmnt-hdr">
+                            <span class="comments"><span class="count">38</span>条评论</span>
+                        </div>
+                        <div class="cmnt-lst">
+                            <div class="cmnt-itm">
+                                <i class="icon rmv-icn"></i>
+                                <div class="cur-act ">
+                                    <div class="act-info">
+                                        <a href="" class="mugshot"><img src="images/tmp/usr2.png"></a>
+                                        <a href="" class="pet-nam">RobinRush</a>
+                                        <span class="vot-up"><span class="count">21</span>赞</span>
+                                        <span class="time">一小时前</span>
+                                    </div>
+                                </div>
+                                <p class="cmnt-cntt">社会学家Elaine Hatfield提出过一个Matching hypothesis（匹配假说）,大意是说人们倾向于寻找相貌上与自己相匹配的人作为长期关系的伴侣。并不会释放下降。</p>
+                            </div>
+                            <div class="cmnt-itm">
+                                <i class="icon rmv-icn"></i>
+                                <div class="cur-act ">
+                                    <div class="act-info">
+                                        <a href="" class="mugshot"><img src="images/tmp/usr2.png"></a>
+                                        <a href="" class="pet-nam">Simple Hu</a>
+                                        <span class="vot-up"><span class="count">21</span>赞</span>
+                                        <span class="time">一小时前</span>
+                                    </div>
+                                </div>
+                                <p class="cmnt-cntt">数据库的数据块中有一条high water，当你增加数据，会上升。但是当你删除数据delete 后HWM并不会释放下降。</p>
+                            </div>
+                            <button class="button mor-btn">加载更多评论</button>
+                            <div class="cmnt-ed">
+                                <input class="cmnt-ed-inp" type="text" placeholder="发表评论...">
+                                <a href="" class="mugshot"><img src="images/tmp/usr2.png"></a>
+                                <input type="submit" value="发布" class=" button sbm-btn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--colunm-->
+            <a name="user" id="user" class="gud-lnk"></a>
+            <div class="tour-gud-col user">
+                <h2 class="tour-gud-tit">用户中心</h2>
+                <div class="tour-gud-wgt">
+                    <div class="widgt right"><strong>个人主页</strong>和<strong>新浪<br>微博</strong>的链接</div>
+                </div>
+                <div class="tour-gud-cntt">
+                    <div class="pers-prf-hdr">
+                        <a href="" class="pers-page-lnk"><i class="icon pers-page-icn"></i></a>
+                        <a href="" class="sm"></a>
+                        <a href="" class="mugshot">
+                            <img src="images/usres/female.png">
+                        </a>
+                        <a href="" class="pet-nam">Amis Dodo</a>
+                        <span class="location">湖北武汉</span>
+                        <span class="job">工程师</span>
+                        <p class="slogan">游走在生物学与物理学的互联网码农</p>
+                        <button class="button sett-btn">设置</button>
+                    </div>
+                </div>
+            </div>
+            <!--colunm-->
+            <div class="tour-gud-col user">
+                <div class="tour-gud-wgt">
+                    <div class="widgt left">用户中心右侧显示赞同和粉丝动态数据<strong>详细资料</strong>是查看该用户更多信息</div>
+                </div>
+                <div class="tour-gud-cntt">
+                    <div class="pers-info">
+                        <ul class="stt-lst">
+                            <li class="vot-up"><span>赞同</span><strong class="count">2125</strong></li>
+                            <li class="followers"><span>关注者</span><strong class="count">2125</strong></li>
+                        </ul>
+                        <button class="button mor-btn">详细资料</button>
+                    </div>
+                </div>
+            </div>
+            <!--colunm-->
+            <a name="domain" id="domain" class="gud-lnk"></a>
+            <div class="tour-gud-col domain">
+                <div class="tour-gud-tit">领域中心</div>
+                <div class="tour-gud-wgt">
+                    <div class="widgt right">该区域链接到<strong>领域信息页</strong>，介绍该领域产品及信息</div>
+                    <div class="widgt right">产品按钮连接到<strong>产品列表页</strong>，同时显示该领域下的产品数量</div>
+                </div>
+                <div class="tour-gud-cntt">
+                    <div class="dom-logo">
+                        <img src="images/domain/html.png">
+                        <span class="products">产品<span class="count">125</span></span>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="button sbm-btn">极乐首页</a>
+        </div>
+    </div>
+</div>
+<div ng-include src= "'src/include/footer/footer.html'"></div>

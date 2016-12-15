@@ -1,0 +1,40 @@
+<div ng-include src="'src/include/header/header.html'"></div>
+<!--body-->
+<div class="body">
+    <div class="container">
+        <div class="main">
+            <ul class="nav srch-nav">
+                <li>搜索：{{q}}</li>
+                <li ng-class="{'current':isArticle}" ng-click="goArticle(0)"><span>文章</span></li>
+                <li ng-class="{'current':!isArticle}" ng-click="goArticle(1)"><span>组件</span></li>
+            </ul>
+            <div class="list art-lst">
+                <!--文章item-->
+                <div class="item art-itm" ng-repeat="c in articles" ng-show="isArticle">
+                    <h2 ng-click="goArticleDetail(c.id)"><a href="" class="art-lnk">{{c.title}}</a></h2>
+                    <div class="itm-meta">
+                        <a href="" class="author">{{c.creater.petName}}</a>
+                        <span class="score"><span class="icon"></span><span class="count">{{c.score}}</span></span>
+                        <span class="time">{{c.createTime|dateDiff}}</span>
+                    </div>
+                </div>
+                <!--组件item-->
+                <div class="item wgt-itm" ng-repeat="c in sdks" ng-show="!isArticle">
+                    <h2 ng-click="goDirectiveDetail(c.id)"><a href="" class="wgt-nam">{{c.shortName}}</a></h2>
+                    <div class="introduction">{{c.slogan}}</div>
+                    <div class="itm-meta">
+                        <span class="articles">文章{{c.articlesCount}}</span>
+                        <span class="followers">关注{{c.followersCount}}</span>
+                    </div>
+                    <div class="itm-sid">
+                        <button ng-class="{true:'button folo-btn pressed',false:'button folo-btn'}[c.isFollowed]" ng-click="follow(c)">{{c.followStatu}}</button>
+                    </div>
+                </div>
+                <button ng-class="{true:'button mor-btn',false:'button mor-btn disable'}[showMore == '加载更多']"  ng-click="getMoreSearch()" >{{showMore}}</button>
+            </div>
+        </div>
+        <div ng-include src="'src/include/aside/aside.html'"></div>
+    </div>
+</div>
+
+<div class="footer" ng-include src= "'src/include/footer/footer.html'"></div>

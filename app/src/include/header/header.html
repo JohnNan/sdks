@@ -1,0 +1,72 @@
+<!--header-->
+<div class="header" ng-controller="headerCtrl">
+    <div class="hdr-inr">
+        <a href="" class="logo" ng-click="goHome()"><img src="images/sprite/logo.png"></a>
+        <div class="sdk">SDKs
+      <span>
+        <ul class="boxshadow">
+            <li ng-class="{'current':!hoverQa}" ><a href="">SDKs</a></li>
+            <li ng-class="{'current':hoverQa}" ng-mouseenter="enter()" ng-mouseleave="leave()" ng-click="goQa()"><a href="">问答</a></li>
+        </ul>
+      </span>
+        </div>
+        <div class="srch-ed-are">
+            <input class="srch-inp" type="text" placeholder="搜索文章、SDK..." ng-model="q" ng-change="typing()" id="search_input">
+            <button class="icon srch-icn" ng-click="goSearch()"></button>
+            <!--搜索推荐列表-->
+            <div class="sug-lst-wrap boxshadow" ng-show="showSearch">
+                <ul class="list sug-lst">
+                    <li class="item sug-itm sug-itm-tit" ng-show="articles.length!=0">文章</li>
+                    <li class="item sug-itm" ng-repeat="c in articles" ng-click="goArticleDetail(c.id)">
+                        <a href="" ng-bind-html="c.title|strToHtml">
+                            <span class="score"><span class="icon ful-icn"></span>{{c.score}}</span>
+                        </a>
+                    </li>
+                    <li class="item sug-itm sug-itm-tit" ng-show="sdks.length!=0">插件</li>
+                    <li class="item sug-itm" ng-repeat="c in sdks" ng-click="goSDKDetail(c.id)">
+                        <a href="">
+                            <span class="avatar wgt-logo" ng-click="goHome()"><img src="{{c.photo}}"></span>
+                            <span class="pet-nam">{{c.shortName}}</span>
+              <span class="meta-data">
+                <span class="articles">文章{{c.articlesCount}}</span>
+                <span class="followers">关注{{c.followersCount}}</span>
+              </span>
+                        </a>
+                    </li>
+                    <li class="item sug-itm sug-itm-mor"  ng-click="goSearch()" ng-show="showSearch">查看全部搜索结果</li>
+                </ul>
+            </div>
+        </div>
+    <span class="user" ng-show="loginStatus">
+      <a href="/person/{{user.me.alias}}" class="avatar mugshot"><img src="{{user.me.photo}}"></a>
+      <ul class="drop-lst boxshadow">
+          <li class="idt-ac"  ng-repeat="c in myIdentities" ng-click="goQaWeb(c)">
+              <a href="">
+                  <span class="mugshot"><img src="{{c.logo}}"></span>
+                  <span class="pet-nam">{{c.shortName}}</span>
+                  <span class="idt-eml">{{c.email}}</span>
+              </a>
+          </li>
+          <li class="invite"><a href="/invites/home"><i class="icon inv-icn"></i>邀请朋友<span class="count"><!--32--></span></a></li>
+          <li class="setting"><a href="/customer/settings"><i class="icon sett-icn"></i>设置中心</a></li>
+          <!--<li class="create"><a href=""><i class="icon cre-icn"></i>新建企业</a><a href="" class="icon help"></a></li>-->
+          <li class="sgn-out"><a href="/signout"><i class="icon sgn-out-icn"></i>退出登录</a></li>
+      </ul>
+       <a href="/person/{{user.me.alias}}" class="pet-nam">{{user.me.petName}}</a>
+    </span>
+        <a href="/notifications/home" class="notification" ng-show="loginStatus"><span class="count"><!--写数字--></span></a>
+    </div>
+    <div class="nav-tags boxshadow">
+        <ul class="nav-tag-lst">
+            <li class="nav-tag" ng-repeat="c in domains" ng-click="goSDKList(c)"><a href="" >{{c}}</a></li>
+            <li class="nav-tag separator">|</li>
+            <li class="nav-tag" ng-repeat="c in sdks" ng-click="goFollowSDK(c.id)"><a href="">{{c.shortName}}</a></li>
+            <li class="nav-tag" ng-click="goSDKList()">
+                <a href="" class="tag-mor-lnk">
+                    <span class="mor-icn"></span><span class="mor-icn"></span><span class="mor-icn"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div ng-include src="'src/include/header/header.html'"></div>
+<div class="body">
+    <h1 ng-click="clickToOpen()" style="margin-top: 100px;color: black;">点我！</h1>
+</div>
+
+
+<div type="button" style="position :absolute;left: 200px;background-color: red" ng-mouseenter="popup4($event)" ng-mouseleave="popup4()" >被固定到事件源附近的自定义浮层</div>
+
+<popup ng-if="showPop" close="showPop=false" close-action="esc timeout outerchick" align="top">
+    <div class="bbl-wrap" ng-mouseleave="popup()">
+    <div class="bbl-skn"><span></span></div>
+    <div class="bbl-info">
+    <a href="" class="avatar"><img src="images/users/female.png"></a>
+    <a href="" class="name">AmisDodo</a>
+    <div class="location">湖北武汉</div>
+    <div class="slogan">游走在生物学与物理学的互联网码农</div>
+    <button class="buttton folo-btn pressed">已关注</button>
+    </div>
+    <div class="data">
+    <span class="vot-up">赞同<span class="count">324</span></span>
+    <span class="followers">关注者<span class="count">324</span></span>
+    <span class="answers">回答<span class="count">324</span></span>
+    </div>
+    </div>
+</popup>
+
+<div ng-include src= "'src/include/footer/footer.html'"></div>
